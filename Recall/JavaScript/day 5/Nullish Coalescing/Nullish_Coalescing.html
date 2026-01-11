@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Compare || and ?? with value 0
+        
+        let count = 0;
+
+        console.log(count || 10);
+        console.log(count ?? 10);
+
+
+        // Handle empty string using ??
+        
+        let username = "";
+
+        console.log(username || "Guest");
+        console.log(username ?? "Guest");
+
+
+        // Provide default value using ??
+        
+        let score = null;
+
+        let finalScore = score ?? 50;
+        console.log(finalScore);
+
+
+        // Combine optional chaining with ??
+        
+        const user = {
+            profile: {
+                email: "karthik@gmail.com"
+            }
+        };
+
+        let email = user.profile?.email ?? "Email not available";
+        let phone = user.profile?.phone ?? "Phone not available";
+
+        console.log(email);
+        console.log(phone);
+
+    </script>
+</body>
+
+</html>

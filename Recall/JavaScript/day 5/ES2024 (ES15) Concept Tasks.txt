@@ -1,0 +1,17 @@
+1️ Promise.withResolvers()
+
+    Promise.withResolvers() creates a promise and gives us its resolve and reject functions separately, so we can control the promise from outside.
+
+2️ Old Promise vs ES2024
+
+    Old way: we create a promise and define resolve inside the constructor.
+
+    ES2024 way: Promise.withResolvers() gives the promise and resolve function directly, making the code cleaner.
+
+3️ Where manual promise control is useful
+
+    Manual promise control is useful when a promise should finish only after an external event like a button click or API response.
+
+4️ Why ES2024 focuses on stability
+
+    ES2024 focuses on stability to make JavaScript safer, faster, and more reliable without breaking old code.

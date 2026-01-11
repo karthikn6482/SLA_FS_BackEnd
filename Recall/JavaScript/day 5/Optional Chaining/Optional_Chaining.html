@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Access nested object safely using ?.
+        
+        const user = {
+            name: "Karthikeyan",
+            address: {
+                city: "Pudukkottai"
+            }
+        };
+
+        console.log(user.address?.city);
+        console.log(user.contact?.phone);
+
+
+        // Replace && condition with optional chaining
+        // Old way
+        
+        console.log(user && user.address && user.address.city);
+
+        // New way
+        
+        console.log(user.address?.city);
+
+
+        // Optional chaining on array access
+        
+        const students = [
+            { name: "Karthik" },
+            { name: "Gokul" }
+        ];
+
+        console.log(students[0]?.name);
+        console.log(students[2]?.name);
+
+
+        // Simulated API response access
+        
+        const apiResponse = {
+            status: 200,
+            data: {
+                user: {
+                    id: 101,
+                    profile: {
+                        email: "karthik@gmail.com"
+                    }
+                }
+            }
+        };
+
+        console.log(apiResponse.data?.user?.profile?.email);
+        console.log(apiResponse.data?.user?.profile?.phone);
+
+    </script>
+</body>
+
+</html>

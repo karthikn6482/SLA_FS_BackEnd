@@ -1,0 +1,57 @@
+<script>
+    // Task 3.2: var loop problem with setTimeout
+function varLoopProblem() {
+    for (var i = 0; i < 3; i++) {
+      setTimeout(function () {
+        console.log(i);
+      }, 1000);
+    }
+  }
+  
+  // Fix using let
+  function letFix() {
+    for (let i = 0; i < 3; i++) {
+      setTimeout(function () {
+        console.log(i);
+      }, 1000);
+    }
+  }
+  
+  // Fix using closure
+  function closureFix() {
+    for (var i = 0; i < 3; i++) {
+      (function (x) {
+        setTimeout(function () {
+          console.log(x);
+        }, 1000);
+      })(i);
+    }
+  }
+  
+    varLoopProblem();
+
+    letFix();
+
+    closureFix();
+
+
+
+  // Task 3.3: var, let, const reassignment behavior
+  function reassignmentTest() {
+    var a = 10;
+    let b = 20;
+    const c = 30;
+
+    a = 15;
+    b = 25;
+
+    const obj = { name: "JS" };
+    obj.name = "JavaScript";
+
+    return { a, b, c, obj };
+  }
+
+  const result = reassignmentTest();
+  console.log("Reassignment Test Result:", result);
+  
+</script>

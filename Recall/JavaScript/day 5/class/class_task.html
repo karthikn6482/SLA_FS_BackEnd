@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Student class with name and age
+
+        class Student {
+            constructor(name, age) {
+                this.name = name;
+                this.age = age;
+            }
+
+            getDetails() {
+                console.log(`Name: ${this.name}, Age: ${this.age}`);
+            }
+        }
+
+        const s1 = new Student("Karthik", 21);
+        const s2 = new Student("Gokul", 22);
+        const s3 = new Student("Mathan", 21);
+
+        s1.getDetails();
+        s2.getDetails();
+        s3.getDetails();
+
+
+        // BankAccount class with deposit & withdraw
+
+        class BankAccount {
+            constructor(holder, balance) {
+                this.holder = holder;
+                this.balance = balance;
+            }
+
+            deposit(amount) {
+                this.balance += amount;
+                console.log(`Deposited: ${amount}, Balance: ${this.balance}`);
+            }
+
+            withdraw(amount) {
+                if (amount <= this.balance) {
+                    this.balance -= amount;
+                    console.log(`Withdrawn: ${amount}, Balance: ${this.balance}`);
+                } else {
+                    console.log("Insufficient balance");
+                }
+            }
+        }
+
+        const account = new BankAccount("Karthik", 1000);
+        account.deposit(500);
+        account.withdraw(300);
+        account.withdraw(2000);
+
+
+        // Create 3 objects from one class
+
+        const st1 = new Student("Ragul", 22);
+        const st2 = new Student("Arun", 21);
+        const st3 = new Student("Vijay", 23);
+
+        st1.getDetails();
+        st2.getDetails();
+        st3.getDetails();
+
+
+        // Function constructor → Class
+
+        function Employee(name, salary) {
+            this.name = name;
+            this.salary = salary;
+        }
+
+        Employee.prototype.show = function () {
+            console.log(this.name, this.salary);
+        };
+
+        class EmployeeClass {
+            constructor(name, salary) {
+                this.name = name;
+                this.salary = salary;
+            }
+
+            show() {
+                console.log(this.name, this.salary);
+            }
+        }
+
+        const emp = new EmployeeClass("Karthik", 50000);
+        emp.show();
+
+    </script>
+</body>
+
+</html>

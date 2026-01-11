@@ -1,0 +1,56 @@
+<script>
+    // Task 4.1: createMultiplier using closure
+    function createMultiplier(x) {
+      return function (y) {
+        return x * y;
+      };
+    }
+  
+    const multiplyBy5 = createMultiplier(5);
+    console.log("Multiply 5 x 4 =", multiplyBy5(4));
+  
+  
+    // Task 4.2: secretPassword with private variable
+    function secretPassword() {
+      let password = "";
+  
+      return {
+        setPassword(newPass) {
+          password = newPass;
+        },
+        checkPassword(guess) {
+          return password === guess;
+        }
+      };
+    }
+  
+    const myPassword = secretPassword();
+    myPassword.setPassword("admin123");
+  
+    console.log("Check password 'admin123':", myPassword.checkPassword("admin123"));
+    console.log("Check password 'test123':", myPassword.checkPassword("test123"));
+  
+  
+    // Task 4.3: once function using closure
+    function once(fn) {
+      let called = false;
+      let result;
+  
+      return function (...args) {
+        if (!called) {
+          result = fn.apply(this, args);
+          called = true;
+        }
+        return result;
+      };
+    }
+  
+    function sayHello(name) {
+      return "Hello " + name;
+    }
+  
+    const greetOnce = once(sayHello);
+  
+    console.log(greetOnce("Karthikeyan"));
+    console.log(greetOnce("Gokul"));
+  </script>  

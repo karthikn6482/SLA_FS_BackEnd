@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise</title>
+</head>
+
+<body>
+    <script>
+// 1️ Promise Resolve After Delay
+
+
+        new Promise(function (resolve) {
+            setTimeout(function () {
+                resolve("Promise resolved after 2 seconds");
+            }, 2000);
+        }).then(function (msg) {
+            console.log(msg);
+        });
+
+
+// 2 Promise Reject Example
+
+
+        new Promise(function (resolve, reject) {
+            let success = false;
+            if (success) {
+                resolve("Success");
+            } else {
+                reject("Promise rejected");
+            }
+        })
+            .then(function (res) {
+                console.log(res);
+            })
+            .catch(function (err) {
+                console.log(err);
+            });
+
+
+// 3️ Promise Chaining
+
+
+        new Promise(function (resolve) {
+            resolve(5);
+        })
+            .then(function (num) {
+                console.log("First:", num);
+                return num * 2;
+            })
+            .then(function (num) {
+                console.log("Second:", num);
+                return num * 2;
+            })
+            .then(function (num) {
+                console.log("Third:", num);
+            });
+
+
+// 4️ Promise.all Usage
+
+
+        let p1 = new Promise(function (resolve) {
+            setTimeout(() => resolve("A"), 1000);
+        });
+
+        let p2 = new Promise(function (resolve) {
+            setTimeout(() => resolve("B"), 2000);
+        });
+
+        let p3 = new Promise(function (resolve) {
+            setTimeout(() => resolve("C"), 3000);
+        });
+
+        Promise.all([p1, p2, p3])
+            .then(function (result) {
+                console.log(result);
+            });
+
+
+// 5️ Convert Callback to Promise
+
+
+        function divide(a, b) {
+            return new Promise(function (resolve, reject) {
+                if (b === 0) {
+                    reject("Division by zero");
+                } else {
+                    resolve(a / b);
+                }
+            });
+        }
+
+        divide(10, 2)
+            .then(function (res) {
+                console.log("Result:", res);
+            })
+            .catch(function (err) {
+                console.log(err);
+            });
+
+        divide(10, 0)
+            .then(function (res) {
+                console.log("Result:", res);
+            })
+            .catch(function (err) {
+                console.log(err);
+            });
+    </script>
+</body>
+
+</html>

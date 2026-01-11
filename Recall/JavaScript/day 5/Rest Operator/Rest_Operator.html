@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Function that accepts unlimited arguments
+        
+        function totalSum(...numbers) {
+            let sum = 0;
+            for (let n of numbers) {
+                sum += n;
+            }
+            console.log(sum);
+        }
+
+        totalSum(10, 20, 30, 40);
+
+
+        // Rest parameter with reduce
+        
+        function multiplyAll(...nums) {
+            const result = nums.reduce((acc, val) => acc * val, 1);
+            console.log(result);
+        }
+
+        multiplyAll(2, 3, 4);
+
+
+        // Combine rest with destructuring
+        
+        const marks = [90, 85, 88, 92];
+
+        const [first, second, ...remaining] = marks;
+
+        console.log(first, second);
+        console.log(remaining);
+
+
+        // Rest vs Spread example
+
+        // Rest → collects values
+
+        function showNames(first, ...others) {
+            console.log(first);
+            console.log(others);
+        }
+
+        showNames("Karthik", "Gokul", "Mathan");
+
+
+        // Spread → expands values
+
+        const nums = [1, 2, 3];
+
+        function add(a, b, c) {
+            console.log(a + b + c);
+        }
+
+        add(...nums);
+
+    </script>
+</body>
+
+</html>

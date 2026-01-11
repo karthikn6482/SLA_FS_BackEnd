@@ -1,0 +1,15 @@
+1️ Convert an ES5 program into ES6
+
+    ES5 uses var and function syntax, while ES6 uses let, const, arrow functions, and cleaner code.
+
+2️ Identify ES6 features used in code
+
+    Common ES6 features are let, const, arrow functions, template literals, destructuring, and modules.
+
+3️ Why ES6 is more suitable for React
+
+    ES6 is better for React because it supports arrow functions, components, and cleaner syntax, which makes code easier to read and manage.
+
+4️ Do we need to learn every ES version?
+
+    No, we only need to understand important features because newer ES versions mainly improve performance and stability.

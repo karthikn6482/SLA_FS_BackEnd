@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Normal function → Arrow function
+
+        function add(a, b) {
+            return a + b;
+        }
+
+        const addArrow = (a, b) => a + b;
+
+        console.log(addArrow(5, 3));
+
+
+        // Arrow function with one parameter
+
+        const square = n => n * n;
+
+        console.log(square(4));
+
+
+        // Arrow function returning an object
+
+        const createStudent = (name, mark) => ({
+            name: name,
+            mark: mark
+        });
+
+        console.log(createStudent("Karthik", 85));
+
+
+        // Arrow function inside map()
+
+        const numbers = [1, 2, 3, 4, 5];
+
+        const doubled = numbers.map(num => num * 2);
+
+        console.log(doubled);
+
+    </script>
+</body>
+
+</html>

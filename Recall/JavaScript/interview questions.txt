@@ -1,0 +1,135 @@
+1 Why let and const were introduced when var already existed?
+
+var has function scope, allows re-declaration, and is hoisted with undefined, which can cause bugs.
+let and const provide block scope, prevent accidental re-declaration, and make code more predictable.
+const also enforces immutability of the binding, improving safety.
+
+2 How does JavaScript decide the data type of a variable at runtime?
+
+JavaScript is dynamically typed.
+The data type is determined at runtime based on the value assigned, not during declaration.
+Example: the same variable can hold a number, string, or object at different times.
+
+3 Difference between == and ===, and why companies prefer ===?
+
+== performs type coercion before comparison.
+=== compares both value and type without coercion.
+Companies prefer === because it avoids unexpected results and hidden bugs, making code more reliable.
+
+4 How do logical operators (&&, ||) help in cleaner conditional code?
+
+They support short-circuit evaluation, reducing nested if statements.
+	&& executes the next condition only if the first is true.
+	|| provides default values and fallback logic.
+	This results in shorter, more readable code.
+
+5 When would you choose switch over if-else in real applications?
+
+Use a switch when:
+
+Comparing one variable against multiple fixed values
+
+Handling menu options, roles, and status codes
+It improves readability, structure, and maintainability over long if-else chains.
+
+6 Why does a do-while execute at least once even if the condition is false?
+
+Because the condition is checked after execution.
+This is useful when at least one execution is mandatory, such as user input validation.
+
+7 What happens internally when a for loop runs in JavaScript?
+
+Initialization runs once
+
+Condition is checked
+
+Loop body executes
+
+Increment/decrement happens
+
+Condition is re-checked
+This cycle continues until the condition becomes false.
+
+8 How does array indexing work, and what if an index doesn’t exist?
+
+Arrays use zero-based indexing.
+If you access a non-existent index, JavaScript returns undefined, not an error.
+This allows safe access but requires validation.
+
+9 Difference between map() and forEach() (return value & use case)?
+
+map():
+
+Returns a new array
+
+Used for data transformation
+
+forEach():
+
+Returns undefined
+
+Used for side effects like logging or updating values
+
+10 Why are higher-order array methods preferred over loops?
+
+They are:
+
+More readable
+
+Less error-prone
+
+Declarative (focus on what, not how)
+They also support functional programming and immutability.
+
+11 How is an object stored in memory compared to a primitive?
+
+Primitives are stored by value (stack).
+Objects are stored by reference (heap).
+Assigning an object copies the reference, not the actual data.
+
+12 for...in vs Object.keys() when iterating objects?
+
+for...in:
+
+Iterates over enumerable + inherited properties
+
+Object.keys():
+
+Returns only own enumerable properties
+
+Safer and more predictable in real applications
+
+13 Parameters vs Arguments, and how do callbacks fit in?
+
+Parameters are variables in a function definition.
+Arguments are actual values passed to the function.
+A callback is a function passed as an argument and executed later, enabling reusability and async behaviour.
+
+14 Why doesn’t async JavaScript block the main thread?
+
+Async operations use:
+
+Event Loop
+
+Callback queue
+
+Microtask queue
+Time-consuming tasks run in the background, keeping the UI responsive and preventing freezing.
+
+15 Role of the V8 engine in JS & React?
+
+V8:
+
+Compiles JavaScript into machine code
+
+Executes JS extremely fast
+
+Manages memory & garbage collection
+
+For React, V8 ensures:
+
+Fast rendering
+
+Efficient state updates
+
+Smooth user interactions

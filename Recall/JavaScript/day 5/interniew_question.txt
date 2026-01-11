@@ -1,0 +1,157 @@
+1️ What is closure? Give a real-life use case
+
+    A closure is when a function remembers variables from its outer function even after the outer function is finished.
+    
+    Use case: Data hiding (like keeping a counter private).
+
+2️ What happens if we don’t use break in switch?
+
+    Without break, execution continues to the next case (called fall-through).
+
+3️ Difference between null and undefined
+
+    undefined: Variable is declared but not assigned
+
+    null: Variable is intentionally empty
+
+4️ What is prototype in JavaScript?
+
+    A prototype allows objects to share methods and properties to save memory.
+
+5️ Why was ES6 introduced?
+
+    ES6 was introduced to make JavaScript cleaner, modern, and easier to write.
+
+6️ Difference between ES5 and ES6
+
+    ES5 uses var and functions, ES6 adds let, const, arrow functions, classes, and modules.
+
+7️ Explain block scope with example
+
+    Variables declared with let and const work only inside { }.
+
+    example
+
+        if (true) {
+            let x = 10;
+        }
+
+    x is not accessible outside.
+
+8️ What is arrow function? Difference from normal function
+
+    Arrow functions are shorter and do not have their own this.
+
+9️ Why arrow functions don’t have their own this?
+
+    They use this from the surrounding scope to avoid confusion.
+
+10 What are template literals and why used?
+
+    Template literals use backticks ` and allow variables inside strings.
+
+    example
+    
+    `Hello ${name}`
+
+1️1️ What is destructuring?
+
+    Destructuring extracts values from arrays or objects easily.
+
+    example
+
+    Array:
+
+    let [a, b] = [1, 2];
+
+    Object:
+
+    let { name } = user;
+
+1️2️ Convert ES5 function to ES6
+
+    ES5
+
+        function add(a, b) {
+          return a + b;
+        }
+
+    ES6
+
+        const add = (a, b) => a + b;
+
+1️3️ Swap two numbers without third variable
+
+    a = a + b;
+    b = a - b;
+    a = a - b;
+
+1️4️ Synchronous vs Asynchronous JavaScript
+
+    Synchronous: Runs line by line
+
+    Asynchronous: Doesn’t block execution (API, setTimeout)
+
+1️5️ What is a Promise?
+
+    A Promise represents a value that will be available in the future.
+
+1️6️ Promise states
+
+    Pending – initial
+
+    Fulfilled – success
+
+    Rejected – failure
+
+1️7️ Callback vs Promise
+
+    Callback: Nested and hard to manage
+
+    Promise: Cleaner and easier error handling
+
+1️8 What is async/await?
+
+    async/await makes asynchronous code look like synchronous code.
+
+1️9️ Why async/await is better than .then()?
+
+    It improves readability and avoids callback chaining.
+
+2️0️ What happens if promise rejection is not handled?
+
+    It causes errors and may crash the application.
+
+2️1️ What is optional chaining (?.)?
+
+    It prevents errors when accessing nested objects.
+
+    example
+
+    user?.address?.city
+
+2️2️ What is nullish coalescing (??)?
+
+    It returns a default value only if the value is null or undefined.
+
+2️3️ Difference between || and ??
+
+    || checks falsy values
+
+    ?? checks only null and undefined
+
+2️4️ What is event loop?
+
+    The event loop manages async tasks and moves them to the call stack.
+
+2️5️ Microtask queue vs callback queue
+
+    Microtask: Promises
+
+    Callback: setTimeout, setInterval
+    
+    Microtasks run first.
+
+2️6️ What is setTimeout? Is it async?
+
+    setTimeout runs code after a delay and yes, it is asynchronous.

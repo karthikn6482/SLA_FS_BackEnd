@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>let & const Task</title>
+</head>
+
+<body>
+
+    <script>
+
+        // Rewrite ES5 using let & const
+
+        var name = "Karthikeyan";
+        var age = 21;
+
+        // ES6 version
+
+        const userName = "Karthikeyan";
+        let userAge = 21;
+
+        console.log(userName, userAge);
+
+
+        // Block scope using let inside if
+
+        if (true) {
+            let message = "Hello from block scope";
+            console.log(message);
+        }
+
+        // console.log(message); // ReferenceError
+
+
+        // Reassign a const
+        const country = "India";
+        console.log(country);
+
+        // country = "USA"; // TypeError
+
+
+        // var bug example and fix with let
+
+        for (var i = 1; i <= 3; i++) {
+            setTimeout(function () {
+                console.log("var:", i);
+            }, 1000);
+        }
+
+        for (let j = 1; j <= 3; j++) {
+            setTimeout(function () {
+                console.log("let:", j);
+            }, 2000);
+        }
+
+    </script>
+
+</body>
+
+</html>

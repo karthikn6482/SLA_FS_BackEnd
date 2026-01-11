@@ -1,0 +1,92 @@
+Basic React interview questions (5)
+
+1)What is React, and what problem does it solve compared to traditional DOM manipulation??
+
+React is a JavaScript library for building user interfaces.
+
+Problems it solves:
+
+Manual DOM manipulation is slow
+
+Hard to manage UI state
+
+Poor performance
+
+React solves these using:
+
+Virtual DOM
+
+Component-based architecture
+
+Efficient updates
+
+2)What is JSX in React, and how is it different from regular HTML??
+
+JSX stands for JavaScript XML.
+
+It looks like HTML but works inside JavaScript.
+
+Example:
+
+const element = <h1>Hello</h1>;
+
+| JSX                         | HTML         |
+| --------------------------- | ------------ |
+| Uses `className`            | Uses `class` |
+| JS expressions allowed `{}` | Not allowed  |
+| Must have one parent        | No such rule |
+
+3)What is the difference between props and state in React? Give examples.?
+
+| Props                  | State                 |
+| ---------------------- | --------------------- |
+| Passed from parent     | Managed by component  |
+| Read-only              | Can be changed        |
+| Used for communication | Used for dynamic data |
+
+Example:
+
+Props
+
+function Child(props) {
+  return <h1>{props.name}</h1>;
+}
+
+State
+
+this.state = { count: 0 };
+
+4)What is the virtual DOM, and how does React use it to update the UI efficiently??
+
+Virtual DOM is a lightweight copy of the real DOM.
+
+How React uses it:
+
+Creates Virtual DOM
+
+Compares old vs new (diffing)
+
+Updates only changed parts
+
+This makes React fast and efficient.
+
+5)What is a component in React, and what are the main types of 
+components?
+
+A component is a reusable piece of UI.
+
+Example:
+
+Button
+
+Header
+
+Footer
+
+Login Form
+
+Types of components:
+
+Functional Components
+
+Class Components

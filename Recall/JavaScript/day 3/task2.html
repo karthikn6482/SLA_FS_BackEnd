@@ -1,0 +1,53 @@
+<script>
+    // Task 2.1: Check truthy or falsy
+    function checkTruthy(value) {
+      return value ? "truthy" : "falsy";
+    }
+  
+    console.log("checkTruthy(undefined):", checkTruthy(undefined));
+    console.log("checkTruthy(0):", checkTruthy(0));
+    console.log("checkTruthy(1):", checkTruthy(1));
+    console.log("checkTruthy('hello'):", checkTruthy("hello"));
+    console.log("checkTruthy(''):", checkTruthy(""));
+    console.log("checkTruthy(null):", checkTruthy(null));
+    console.log("checkTruthy([]):", checkTruthy([]));
+    console.log("checkTruthy({}):", checkTruthy({}));
+    console.log("checkTruthy(false):", checkTruthy(false));
+  
+  
+    // Task 2.2: Filter truthy values
+    function getTruthyValues(arr) {
+      let result = [];
+      for (let i = 0; i < arr.length; i++) {
+        if (arr[i]) {
+          result.push(arr[i]);
+        }
+      }
+      return result;
+    }
+  
+    const values = [0, 1, false, true, "", "JS", null, 10];
+    console.log("Original Array:", values);
+    console.log("Truthy Values:", getTruthyValues(values));
+  
+  
+    // Task 2.3: Name resolver with priority
+    function getDisplayName(firstName, lastName, nickname) {
+      if (firstName && lastName) {
+        return firstName + " " + lastName;
+      }
+      if (firstName) {
+        return firstName;
+      }
+      if (nickname) {
+        return nickname;
+      }
+      return "Anonymous";
+    }
+  
+    console.log("Full Name:", getDisplayName("Karthikeyan", "M", "Karthi"));
+    console.log("First Name Only:", getDisplayName("Karthikeyan", "", "Karthi"));
+    console.log("Nickname Only:", getDisplayName("", "", "Karthi"));
+    console.log("No Name:", getDisplayName("", "", ""));
+  </script>
+  

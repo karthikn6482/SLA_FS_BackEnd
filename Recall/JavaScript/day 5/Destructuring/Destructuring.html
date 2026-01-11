@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Destructure values from an array
+        
+        const numbers = [10, 20, 30, 40];
+
+        const [a, b, c] = numbers;
+
+        console.log(a, b, c);
+
+
+        // Destructure properties from an object
+        
+        const student = {
+            name: "Karthikeyan",
+            age: 21,
+            course: "CSE"
+        };
+
+        const { name, age, course } = student;
+
+        console.log(name, age, course);
+
+
+        // Rename variables while destructuring
+        
+        const { name: studentName, age: studentAge } = student;
+
+        console.log(studentName, studentAge);
+
+
+        // Destructure function parameters
+        
+        function showDetails({ name, course }) {
+            console.log(name, course);
+        }
+
+        showDetails(student);
+
+    </script>
+</body>
+
+</html>

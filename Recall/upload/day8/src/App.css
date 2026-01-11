@@ -1,0 +1,15 @@
+.app {
+  text-align: center;
+  margin-top: 100px;
+}
+
+
+.app h1 {
+  color: #333;
+}
+
+
+.app p {
+  color: #555;
+  font-size: 18px;
+}

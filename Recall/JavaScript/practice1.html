@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS</title>
+</head>
+<body>
+  <script>
+// 1. ADD TWO NUMBERS – 3 VARIATIONS
+
+function add1(a, b) {
+  return a + b;
+}
+
+const add2 = function (a, b) {
+  return a + b;
+};
+
+const add3 = (a, b) => a + b;
+
+console.log("add1:", add1(2, 3));
+console.log("add2:", add2(4, 5));
+console.log("add3:", add3(6, 7));
+
+
+// 2. GREET FUNCTION → ARROW VARIATIONS
+
+const greet1 = (name) => {
+  return "Hello, " + name;
+};
+
+const greet2 = name => {
+  return "Hello, " + name;
+};
+
+const greet3 = name => "Hello, " + name;
+
+console.log(greet1("Ajay"));
+console.log(greet2("Ravi"));
+console.log(greet3("Kumar"));
+
+
+// 3. CALCULATE BILL
+
+function calculateBill(amount, taxPercentage) {
+  return amount + (amount * taxPercentage) / 100;
+}
+
+const calculateBillArrow = (amount, taxPercentage) =>
+  amount + (amount * taxPercentage) / 100;
+
+console.log("Bill:", calculateBill(1000, 10));
+console.log("Bill Arrow:", calculateBillArrow(2000, 18));
+
+
+// 4. OBJECT METHOD vs ARROW METHOD
+
+const user = {
+  name: "Ajay",
+
+  sayName: function () {
+    console.log("sayName:", this.name);
+  },
+
+  sayNameArrow: () => {
+    console.log("sayNameArrow:", this.name);
+  }
+};
+
+user.sayName();
+user.sayNameArrow();
+
+
+// 5. SQUARE (IMPLICIT RETURN)
+
+const square = n => n * n;
+console.log("Square:", square(5));
+
+
+// 6. SUM OF ANY NUMBER OF ARGUMENTS
+
+function sumAll() {
+  let sum = 0;
+  for (let i = 0; i < arguments.length; i++) {
+    sum += arguments[i];
+  }
+  return sum;
+}
+
+const sumAllArrow = (...nums) => {
+  let sum = 0;
+  for (let n of nums) sum += n;
+  return sum;
+};
+
+console.log("sumAll:", sumAll(1, 2, 3, 4));
+console.log("sumAllArrow:", sumAllArrow(5, 6, 7));
+
+
+// 7. FILTER PASSED MARKS
+
+const marks = [98, 45, 67, 30, 88, 76];
+
+function getPassedMarks() {
+  return marks.filter(m => m >= 50);
+}
+
+console.log("Passed Marks:", getPassedMarks());
+
+
+// 8. REWRITE ARROW FUNCTION
+
+const formatName = (firstName, lastName) =>
+  firstName.toUpperCase() + " " + lastName.toUpperCase();
+
+function formatName1(firstName, lastName) {
+  return firstName.toUpperCase() + " " + lastName.toUpperCase();
+}
+
+const formatName2 = function (firstName, lastName) {
+  return firstName.toUpperCase() + " " + lastName.toUpperCase();
+};
+
+console.log(formatName("ajay", "kumar"));
+console.log(formatName1("ravi", "raj"));
+console.log(formatName2("sara", "john"));
+
+
+// 9. HOISTING EXAMPLE
+
+console.log("add:", add(2, 3));
+
+function add(a, b) {
+  return a + b;
+}
+
+const sub = (a, b) => {
+  return a - b;
+};
+
+console.log("sub:", sub(5, 2));
+
+
+// 10. FUNCTION RETURNING FUNCTION
+
+const createGreeting = greeting => name => `${greeting}, ${name}`;
+
+const greetHello = createGreeting("Hello");
+console.log(greetHello("Ajay"));
+
+
+// 11. CHARACTER FREQUENCY
+
+function getCharFrequency(str) {
+  let freq = {};
+  for (let ch of str) {
+    freq[ch] = (freq[ch] || 0) + 1;
+  }
+  return freq;
+}
+
+console.log("Char Frequency:", getCharFrequency("banana"));
+
+
+// 12. SECOND LARGEST NUMBER
+
+function secondLargest(arr) {
+  let max = -Infinity;
+  let second = -Infinity;
+
+  for (let n of arr) {
+    if (n > max) {
+      second = max;
+      max = n;
+    } else if (n < max && n > second) {
+      second = n;
+    }
+  }
+  return second === -Infinity ? null : second;
+}
+
+console.log("Second Largest:", secondLargest([5, 5, 3, 1]));
+
+
+// 13. ANAGRAM CHECK
+
+function isAnagram(str1, str2) {
+  const clean = s => s.toLowerCase().replace(/\s+/g, "");
+
+  let a = clean(str1);
+  let b = clean(str2);
+
+  if (a.length !== b.length) return false;
+
+  let count = {};
+  for (let c of a) count[c] = (count[c] || 0) + 1;
+  for (let c of b) {
+    if (!count[c]) return false;
+    count[c]--;
+  }
+  return true;
+}
+
+console.log("Anagram:", isAnagram("listen", "silent"));
+
+
+// 14. REMOVE DUPLICATES
+
+function uniqueValues(arr) {
+  let result = [];
+  for (let n of arr) {
+    if (!result.includes(n)) result.push(n);
+  }
+  return result;
+}
+
+console.log("Unique Values:", uniqueValues([1, 2, 2, 3, 1, 4]));
+
+
+// 15. GROUP BY AGE
+
+const people = [
+  { name: "Ajay", age: 20 },
+  { name: "Ravi", age: 21 },
+  { name: "Kumar", age: 20 },
+  { name: "Sara", age: 22 },
+];
+
+function groupByAge(people) {
+  let result = {};
+  for (let p of people) {
+    if (!result[p.age]) result[p.age] = [];
+    result[p.age].push(p.name);
+  }
+  return result;
+}
+
+console.log("Group By Age:", groupByAge(people));
+
+
+// 16. FACTORIAL
+
+function factorial(n) {
+  let fact = 1;
+  for (let i = 1; i <= n; i++) fact *= i;
+  return fact;
+}
+
+console.log("Factorial:", factorial(5));
+
+
+// 17. REVERSE STRING
+
+function reverseString(str) {
+  let rev = "";
+  for (let i = str.length - 1; i >= 0; i--) rev += str[i];
+  return rev;
+}
+
+console.log("Reverse:", reverseString("JavaScript"));
+
+
+// 18. PRIME NUMBER CHECK
+
+function isPrime(n) {
+  if (n <= 1) return false;
+  for (let i = 2; i <= Math.sqrt(n); i++) {
+    if (n % i === 0) return false;
+  }
+  return true;
+}
+
+console.log("Is Prime (7):", isPrime(7));
+console.log("Is Prime (10):", isPrime(10));
+</script>
+</body>
+</html>

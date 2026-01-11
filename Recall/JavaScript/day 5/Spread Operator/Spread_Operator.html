@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Copy an array using spread
+
+        const arr1 = [1, 2, 3];
+
+        const copyArr = [...arr1];
+
+        console.log(copyArr);
+
+
+        // Merge two arrays using spread
+        
+        const arr2 = [4, 5, 6];
+
+        const mergedArr = [...arr1, ...arr2];
+
+        console.log(mergedArr);
+
+
+        // Update an object using spread
+        
+        const student = {
+            name: "Karthikeyan",
+            age: 21,
+            course: "CSE"
+        };
+
+        const updatedStudent = {
+            ...student,
+            age: 22,
+            city: "Pudukkottai"
+        };
+
+        console.log(updatedStudent);
+
+
+        // Pass array values into a function using spread
+        
+        function sum(a, b, c) {
+            console.log(a + b + c);
+        }
+
+        const numbers = [10, 20, 30];
+
+        sum(...numbers);
+
+    </script>
+</body>
+
+</html>

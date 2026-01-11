@@ -1,0 +1,111 @@
+Class component interview questions (5)
+
+1)What is a class component in React, and how is it different from a functional component??
+
+A class component is a JavaScript class that extends the React class. Component must have a render() method.
+
+Example:
+
+class MyComponent extends React.Component {
+  render() {
+    return <h1>Hello</h1>;
+  }
+}
+
+| Class Component        | Functional Component      |
+| ---------------------- | ------------------------- |
+| Uses ES6 class         | Uses JavaScript functions |
+| Uses lifecycle methods | Uses Hooks                |
+| Has `this` keyword     | No `this`                 |
+| Uses `setState()`      | Uses `useState()`         |
+| More complex           | Simpler and cleaner       |
+
+
+
+2)Explain the different lifecycle methods of a React class component and common use cases for each.?
+
+Lifecycle methods are special methods that run at different stages of a component.
+
+Mounting Phase
+
+constructor() ? Initialize state
+
+componentDidMount() ? API calls, timers, subscriptions
+
+Updating Phase
+
+shouldComponentUpdate() ? Performance optimization
+
+componentDidUpdate() ? React to prop/state changes
+
+Unmounting Phase
+
+componentWillUnmount() ? Cleanup (timers, listeners)
+
+
+3)How does setState work in class components?
+
+setState() updates the component's state.
+
+this.setState({ count: 1 });
+
+Why is it asynchronous?
+
+Improves performance
+
+Batches multiple updates together
+
+Avoids unnecessary re-renders
+
+To access the updated state:
+
+Example:
+
+this.setState({ count: 1 }, () => {
+  console.log(this.state.count);
+});
+
+
+4)What is a PureComponent, and how is it different from a regular class component??
+
+PureComponent is like Component, but it does shallow comparison of props and state.
+
+class MyComponent extends React.PureComponent {}
+
+| Component         | PureComponent                   |
+| ----------------- | ------------------------------- |
+| Always re-renders | Re-renders only if data changes |
+| No comparison     | Shallow comparison              |
+| Less optimized    | More optimized                  |
+
+
+5)How do you implement error boundaries in React, and why do they still require class components??
+
+Error boundaries catch JavaScript errors in child components.
+
+They use:
+
+componentDidCatch()
+
+getDerivedStateFromError()
+
+Example:
+
+class ErrorBoundary extends React.Component {
+  state = { hasError: false };
+
+  static getDerivedStateFromError() {
+    return { hasError: true };
+  }
+
+  componentDidCatch(error, info) {
+    console.log(error);
+  }
+
+  render() {
+    if (this.state.hasError) {
+      return <h1>Something went wrong</h1>;
+    }
+    return this.props.children;
+  }
+}

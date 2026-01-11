@@ -1,0 +1,96 @@
+<!-- task1
+Make the Variable different,Hositing,scope and make primitive data types & Each operator using single html file with inside the script 
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>First Day JavaScript Assignment</title>
+</head>
+<body>
+
+<h2>Check Console for Output</h2>
+
+<script>
+var a = 10;
+let b = 20;
+const c = 30;
+
+console.log(a);
+console.log(b);
+console.log(c);
+
+console.log(x);
+var x = 5;
+
+var globalVar = "Global Scope";
+
+function testScope() {
+    var functionVar = "Function Scope";
+    console.log(functionVar);
+}
+testScope();
+
+if (true) {
+    let blockVar = "Block Scope";
+    console.log(blockVar);
+}
+
+let numberType = 100;
+let stringType = "JavaScript";
+let booleanType = true;
+let undefinedType;
+let nullType = null;
+let symbolType = Symbol("id");
+let bigIntType = 123456789n;
+
+console.log(numberType, typeof numberType);
+console.log(stringType, typeof stringType);
+console.log(booleanType, typeof booleanType);
+console.log(undefinedType, typeof undefinedType);
+console.log(nullType, typeof nullType);
+console.log(symbolType, typeof symbolType);
+console.log(bigIntType, typeof bigIntType);
+
+console.log(10 + 5);
+console.log(10 - 5);
+console.log(10 * 5);
+console.log(10 / 5);
+console.log(10 % 3);
+
+let num = 10;
+num += 5;
+console.log(num);
+
+console.log(10 == "10");
+console.log(10 === "10");
+console.log(10 != 5);
+console.log(10 > 5);
+
+console.log(true && false);
+console.log(true || false);
+console.log(!true);
+
+let age = 18;
+let result = age >= 18 ? "Adult" : "Minor";
+console.log(result);
+
+//Task 2:
+//Truthy values and false values.
+
+console.log(Boolean(0));
+console.log(Boolean(""));
+console.log(Boolean(null));
+console.log(Boolean(undefined));
+console.log(Boolean(NaN));
+console.log(Boolean(false));
+
+console.log(Boolean(1));
+console.log(Boolean("Hello"));
+console.log(Boolean([]));
+console.log(Boolean({}));
+console.log(Boolean(true));
+</script>
+
+</body>
+</html>
