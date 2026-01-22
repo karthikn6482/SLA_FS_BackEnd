@@ -1,0 +1,19 @@
+.container {
+  width: 400px;
+  margin: auto;
+  font-family: Arial;
+}
+
+input {
+  padding: 8px;
+  margin: 5px 0;
+}
+
+button {
+  padding: 6px 12px;
+  margin-left: 5px;
+}
+
+h1 {
+  text-align: center;
+}
