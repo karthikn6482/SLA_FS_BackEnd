@@ -1,0 +1,58 @@
+.app {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 16px;
+}
+
+.task {
+  background: #ffffff;
+  padding: 20px 24px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  margin-bottom: 30px;
+}
+
+.task h3 {
+  margin-bottom: 14px;
+  color: #1f2937;
+}
+
+.task button {
+  margin-right: 8px;
+}
+
+.task ul {
+  margin-top: 12px;
+}
+
+.task div {
+  margin-top: 6px;
+}
+
+.scroll-box {
+  height: 200px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
+.preview-box {
+  margin-top: 12px;
+  padding: 16px;
+  border-radius: 6px;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 6px;
+}
+
+.todo-item button {
+  background: #dc3545;
+}
+
+.todo-item button:hover {
+  background: #b52a37;
+}
